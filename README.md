@@ -190,9 +190,10 @@ First we need to find our root partition PARTUUID. Run following command to get 
 # blkid | awk '{print $1" "$(NF)}'
 ```
 The output is similar to this:
+```
 /dev/sda4: PARTUUID="60ce694e-bcc0-47fc-ab4a-df4659a0f1c7" 
 /dev/sda5: PARTUUID="d9650118-bc70-4a67-bd31-9283c43e9ad2"
-
+```
 Use the PARTUUID for your root partition, in my case root partition is /dev/sda5.
 Now install bootloader:
 ```
@@ -205,6 +206,7 @@ nano /boot/loader/loader.conf
 default arch
 timeout 4
 editor	0
+```
 ```
 nano /boot/loader/entries/arch.conf
 ```
